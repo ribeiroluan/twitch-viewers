@@ -1,0 +1,19 @@
+version: "3"
+services:
+  db:
+    image: postgres
+    container_name: "pg_twitch"
+    environment: 
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=twitch_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - "./db:/var/lib/postgresql/data/"
+  bi:
+    image: metabase/metabase
+    ports:
+      - "3000:3000"
+    links:
+      - db
