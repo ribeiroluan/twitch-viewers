@@ -1,3 +1,1 @@
-<p align = "center">
-    <img src="images/twitch-viewers-chart.png" width = 800>
-</p>
+![Data flow chart](/images/twitch_viewers_chart.png "Data flow chart").
