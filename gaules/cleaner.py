@@ -15,7 +15,7 @@ class DataCleaner:
             output["game_id"] = 0
             output["viewer_count"] = 0
         else: 
-            output = {key: self.data[key] for key in self._get_important_colums()}
+            output = {key: self.data[key] for key in self._get_important_columns()}
         
         output["request_time"] = datetime.datetime.now().isoformat()
 
