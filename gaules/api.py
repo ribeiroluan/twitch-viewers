@@ -1,6 +1,7 @@
 import requests
 import logging
 import json
+import datetime
 
 #Initializing logger
 logger = logging.getLogger(__name__)
@@ -31,7 +32,7 @@ class TwitchAPI:
         try:
             endpoint = self._get_endpoint()
             headers = self._get_auth()
-            logger.info(f"Getting data from endpoint: {endpoint}")
+            logger.info(f"Getting data from endpoint {endpoint} at {datetime.datetime.now().isoformat()}")
             response = requests.get(url=endpoint, headers=headers)
             response.raise_for_status()
             return response.json()

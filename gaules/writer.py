@@ -23,4 +23,4 @@ class DataWriter:
             result = conn.execute(text(self._write_qry()))
             conn.commit()
 
-        logger.info(f"Writing data to twitch_db at {datetime.datetime.now()}")
+        logger.info(f"Writing data to twitch_db at {datetime.datetime.now().isoformat()}")
