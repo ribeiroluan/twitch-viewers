@@ -20,7 +20,7 @@ if __name__ == "__main__":
         if datetime.datetime.now() >= start_time and datetime.datetime.now() <= end_time:
             gaules.ingest()
         else:
-            logger.info(f"Run completed. Nothing else to do here.")
+            logger.info(f"Run either not started or already completed at {datetime.datetime.now().isoformat()}")
 
     while True:
         run_pending()
