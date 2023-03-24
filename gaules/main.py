@@ -11,7 +11,7 @@ logging.basicConfig(level=logging.INFO)
 if __name__ == "__main__":
     gaules = Ingestor("gaules")
 
-    @repeat(every(60).seconds)
+    @repeat(every(10).minutes)
     def job():
 
         start_time = datetime.datetime(2023, 3, 22, 0, 0, 0)
