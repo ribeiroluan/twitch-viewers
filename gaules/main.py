@@ -14,7 +14,7 @@ if __name__ == "__main__":
     @repeat(every(10).minutes)
     def job():
 
-        start_time = datetime.datetime(2023, 3, 22, 0, 0, 0)
+        start_time = datetime.datetime(2023, 3, 29, 0, 0, 0)
         end_time = start_time + datetime.timedelta(days = 7)
 
         if datetime.datetime.now() >= start_time and datetime.datetime.now() <= end_time:
