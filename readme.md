@@ -1,1 +1,3 @@
-![Data flow chart](/images/twitch_viewers_chart.png "Data flow chart")
+![Data architecture](/images/twitch_viewers_chart.png "Data architecture")
+
+![Dashboard](/images/dashboard.png "Dashboard")
