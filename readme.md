@@ -16,40 +16,40 @@ This project aims to collect data from a specific Twitch streamer using an API, 
 ## Local setup
 To execute the project locally, you will need Docker and Postgres running on your personal computer. 
 
-1_ First, clone this repository into your home directory
+1. First, clone this repository into your home directory
 
 ```
 git clone https://github.com/ribeiroluan/twitch-viewers
 cd Reddit-API-Pipeline
 ```
 
-2_ Next, install all projects requirements
+2. Next, install all projects requirements
 
 ```
 pip install -r requirements.txt
 ```
 
-3_ Create a `.env` file in the `gaules` directory with the following format:
+3. Create a `.env` file in the `gaules` directory with the following format:
 ```
 KEY = your_rapid_api_key
 ```
 
-4_ Edit `main.py` according to your needs. You will need to select both the streamer you want to collect data for `streamer` and the period you want the data to be collected `start_time` and `end_time`.
+4. Edit `main.py` according to your needs. You will need to select both the streamer you want to collect data for `streamer` and the period you want the data to be collected `start_time` and `end_time`.
 
 
-5_ Open Docker and initialize the container containing both Postgres and Metabase images
+5. Open Docker and initialize the container containing both Postgres and Metabase images
 ```
 docker-compose up
 ```
 
-6_ Setup up your database connection to Metabase through your localhost (Metabase's default port is 3000)
+6. Setup up your database connection to Metabase through your localhost (Metabase's default port is 3000)
 ```
 http://localhost:3000/
 ```
 
-7_ Run the pipeline 
+7. Run the pipeline 
 ```
 python gaules/main.py
 ```
 
-You are all set to generate charts in Metabase using SQL queries!
+New data will then be generated every 10 minutes. You are all set to generate charts in Metabase using SQL queries!
