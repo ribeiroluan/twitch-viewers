@@ -2,10 +2,16 @@ import requests
 import logging
 import json
 import datetime
+from os import getenv
+from dotenv import load_dotenv
 
 #Initializing logger
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
+
+#Load API Key
+load_dotenv()
+API_KEY = getenv('KEY')
 
 class UserNotFound(Exception):
     
@@ -25,7 +31,7 @@ class TwitchAPI:
         return f"{self.base_endpoint}/{self.user}"
 
     def _get_auth(self) -> dict:
-        return {"X-RapidAPI-Key": "e0fb00408emshea80e13f62d0f07p17e386jsnc1878c4b91f4",
+        return {"X-RapidAPI-Key": API_KEY,
                 "X-RapidAPI-Host": "gwyo-twitch.p.rapidapi.com"}
 
     def get_data(self) -> dict:

@@ -208,5 +208,6 @@ pip-selfcheck.json
 
 # Personal
 .coverage
+.env
 old
 db
