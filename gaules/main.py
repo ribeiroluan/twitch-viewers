@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
 
 if __name__ == "__main__":
-    gaules = Ingestor("gaules")
+    streamer = Ingestor("gaules")
 
     @repeat(every(10).minutes)
     def job():
@@ -18,7 +18,7 @@ if __name__ == "__main__":
         end_time = start_time + datetime.timedelta(days = 7)
 
         if datetime.datetime.now() >= start_time and datetime.datetime.now() <= end_time:
-            gaules.ingest()
+            streamer.ingest()
         else:
             logger.info(f"Run either not started or already completed at {datetime.datetime.now().isoformat()}")
 
